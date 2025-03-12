@@ -1,0 +1,33 @@
+<!-- Task 1: Base Structure Setup -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Risk Management Dashboard</title>
+    <link rel="stylesheet" href="cc_15.css">
+</head>
+<body>
+    <h1>Risk Management Dashboard</h1>
+    
+    <!-- Dashboard Container -->
+    <div id="riskDashboard"></div>
+    
+    <!-- Form to Add New Risks -->
+    <form id="riskForm">
+        <input type="text" id="riskName" placeholder="Risk Name" required>
+        <select id="riskLevel">
+            <option value="Low">Low</option>
+            <option value="Medium">Medium</option>
+            <option value="High">High</option>
+        </select>
+        <input type="text" id="department" placeholder="Department" required>
+        <button type="submit">Add Risk</button>
+    </form>
+
+    <!-- Button for Bulk Risk Updates -->
+    <button id="increaseRiskLevels">Increase Risk Levels</button>
+
+    <script src="cc_15.js"></script>
+</body>
+</html>
