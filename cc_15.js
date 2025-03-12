@@ -44,6 +44,34 @@ riskDashboard.appendChild(card);
                 card.querySelector("strong").nextSibling.nodeValue = `\nLevel: ${level}\n`;
             });
         });
+        
+        function increaseRiskLevels() {
+            const riskCards = document.querySelectorAll('.riskCard');
+            riskCards.forEach(card => {
+                const riskLevelElement = card.querySelector('.risk-level');
+                const currentLevel = riskLevelElement.textContent.split(': ')[1]; // Extract level name
+        
+                let newLevel = currentLevel;
+                switch (currentLevel) {
+                    case 'Low':
+                        newLevel = 'Medium';
+                        card.style.backgroundColor = 'yellow';
+                        break;
+                    case 'Medium':
+                        newLevel = 'High';
+                        card.style.backgroundColor = 'red';
+                        break;
+                    case 'High':
+                        newLevel = 'High';
+                        card.style.backgroundColor = 'red';
+                        break;
+                }
+        
+                // Update the level text in the card
+                riskLevelElement.textContent = `Level: ${newLevel}`;
+            });
+        }
+        
 
          // Task 6: Handling Event Propagation
     // Ensuring clicks inside a risk card don’t trigger unwanted actions
