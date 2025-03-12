@@ -44,3 +44,11 @@ riskDashboard.appendChild(card);
                 card.querySelector("strong").nextSibling.nodeValue = `\nLevel: ${level}\n`;
             });
         });
+
+         // Task 6: Handling Event Propagation
+    // Ensuring clicks inside a risk card don’t trigger unwanted actions
+    riskDashboard.addEventListener("click", (e) => {
+        e.stopPropagation();
+        console.log("Dashboard clicked, but not through a risk card.");
+    });
+});
