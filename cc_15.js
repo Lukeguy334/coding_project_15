@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
 riskDashboard.appendChild(card);
 }
 
-         // Handling Form Submission
+         // Task 2 (continued) - Handling Form Submission
     riskForm.addEventListener("submit", (e) => {
         e.preventDefault();
         const riskName = document.getElementById("riskName").value;
@@ -34,3 +34,13 @@ riskDashboard.appendChild(card);
         addRiskItem(riskName, riskLevel, department);
         riskForm.reset();
     });
+
+        // Task 5: Implementing Bulk Updates
+        increaseRiskButton.addEventListener("click", () => {
+            const riskCards = document.querySelectorAll(".riskCard");
+            riskCards.forEach(card => {
+                const level = card.classList.contains("low") ? "Medium" : card.classList.contains("medium") ? "High" : "High";
+                card.className = `riskCard ${level.toLowerCase()}`;
+                card.querySelector("strong").nextSibling.nodeValue = `\nLevel: ${level}\n`;
+            });
+        });
