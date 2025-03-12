@@ -15,6 +15,15 @@ document.addEventListener("DOMContentLoaded", () => {
             Department: ${department}<br>
             <button class="resolve">Resolve</button>
         `;
+  
+    // Task 3: Removing Risk Items
+  card.querySelector(".resolve").addEventListener("click", (e) => {
+    e.stopPropagation();
+    card.remove();
+});
+
+riskDashboard.appendChild(card);
+}
 
          // Handling Form Submission
     riskForm.addEventListener("submit", (e) => {
